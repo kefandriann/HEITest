@@ -24,15 +24,10 @@ public abstract class Vehicule {
     }
 
     public void changerConducteur(Conducteur conducteur) {
-        try {
-            Personne p = (Personne) conducteur;
-            if (p.getAge() >= 18) {
-                this.conducteur = conducteur;
-            } else {
-                System.out.println("Trop jeune");
-            }
-        } catch (ClassCastException e) {
-            e.printStackTrace();
+        if (conducteur.getAge() >= 18) {
+            this.conducteur = conducteur;
+        } else {
+            System.out.println("Trop jeune");
         }
     }
 
